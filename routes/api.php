@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\V1\AuthController;
 use App\Http\Controllers\Api\V1\DynamicFormController;
+use App\Http\Controllers\Api\V1\PublicFormController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,5 +27,12 @@ Route::prefix('v1')->group(function () {
         | Dynamic Form
         */
         Route::post('dynamic-form', [DynamicFormController::class, 'store']);
+
+        Route::get('dynamic-form', [DynamicFormController::class, 'index']);
+
+        /*
+        | Public Form
+        */
+        Route::post('public-form', [PublicFormController::class, 'upload']);
     });
 });
