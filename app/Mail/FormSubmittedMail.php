@@ -11,7 +11,7 @@ class FormSubmittedMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    protected $publicForm;
+    public $publicForm;
 
     /**
      * Create a new message instance.

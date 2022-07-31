@@ -1,14 +1,14 @@
 @component('mail::message')
-# Form Submitted {{ $form->title }}
+# Form Submitted {{ $publicForm->title }}
 
-Dear {{ $form->user->name }},
+Dear {{ $publicForm->user->name }},
 
 Your survey form was submitted. 
 
 @component('mail::table')
 | Questions     | Your Answers  |
 | ------------- |:-------------:|
-@foreach (json_decode($form->data) as $key => $item)
+@foreach (json_decode($publicForm->data) as $key => $item)
 | {{ $key }}    | {{$item}} |
 @endforeach
 @endcomponent

@@ -40,8 +40,12 @@ class PublicFormController extends Controller
         //Sending Mail 
         Mail::to(auth()->user())
             ->send(
-                new FormSubmittedMail($public_form->load('user', 'name'))
+                new FormSubmittedMail($public_form)
             );
 
-    }
+
+        return response()->json([
+            'message' => 'success',
+        ]);
+    }   
 }
