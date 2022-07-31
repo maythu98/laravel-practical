@@ -40,7 +40,7 @@ class PublicFormController extends Controller
         //Sending Mail 
         Mail::to(auth()->user())
             ->send(
-                new FormSubmittedMail($public_form)
+                new FormSubmittedMail($public_form->load('user'))
             );
 
 
